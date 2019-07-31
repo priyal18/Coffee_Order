@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<RelativeLayout
+    android:id="@+id/relative_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/cofffee"
+        android:contentDescription="have some Tasty Coffee" />
+
+    <TextView
+        android:id="@+id/textView2_coffee"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Ready For Coffee"
+        android:textColor="#ffffff"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeMaxTextSize="38sp"
+        android:fontFamily="sans-serif-smallcaps"/>
+</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/linear_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_layout"
+        android:layout_margin="1dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Your Name : "
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-smallcaps"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="15sp"/>
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="NAME"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="20sp"
+        android:inputType="text"
+
+        />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity"
+        android:layout_below="@id/linear_layout2"
+        android:textStyle="bold|italic"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_margin="5dp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="15sp"
+        />
+    
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_1"
+        android:layout_margin="0dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:onClick="decrement"
+            android:text="-"
+            android:layout_weight="4"
+            app:autoSizeTextType="uniform"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="2"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:onClick="increment"
+            android:layout_weight="4"
+            android:text="+"
+            android:textAlignment="center"
+            app:autoSizeTextType="uniform"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TOPPINGS :"
+        android:layout_below="@id/linear_layout"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="15sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold|italic"/>
+    <LinearLayout
+        android:id="@+id/linear_layout_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView3"
+        android:layout_centerHorizontal="true">
+
+        <CheckBox
+            android:id="@+id/chocolate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHOCOLATE"
+            android:textSize="15sp"
+            android:layout_marginRight="10dp"/>
+        <CheckBox
+            android:id="@+id/whippedcream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WHIPPED CREAM"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Order Summary "
+        android:layout_below="@id/linear_layout_3"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="15sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold|italic"/>
+
+    <TextView
+
+        android:id="@+id/order_summary_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/textView"
+        android:text="$10"
+        android:textStyle="bold|italic"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="20sp"
+        android:scrollbars="vertical"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="submitOrder"
+        android:text="Order"
+        android:textSize="20sp"
+        android:layout_marginRight="8dp"
+        android:windowSoftInputMode="adjustPan"/>
+    <Button
+        android:id="@+id/button_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:onClick="send_email"
+        android:layout_marginLeft="8dp"
+        android:textSize="20sp"
+        android:windowSoftInputMode="adjustPan"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
